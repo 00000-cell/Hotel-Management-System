@@ -1,0 +1,36 @@
+HOTEL MANAGEMENT SYSTEM USING JAVA AND JDBC
+
+1. JDBC CONNECTION
+JDBC (Java Database Connectivity) connects Java applications to databases. In this project, Oracle Database Free is connected using the Oracle JDBC Thin Driver (ojdbc11.jar), stored in the lib folder.
+Connection URL: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
+localhost refers to the local computer, 1521 is the Oracle listener port, and FREEPDB1 is the database service name. DriverManager.getConnection() establishes the connection using the URL, username, and password.
+
+2. DATABASE TABLES
+HOTEL_ROOMS: Stores room number, room type, and tariff per night.
+HOTEL_BOOKINGS: Stores booking ID, guest name, room number, check-in date, check-out date, and total cost.
+
+3. HOW JDBC IS USED
+Connection: Establishes the database connection.
+PreparedStatement: Executes parameterized SQL statements to insert records and check availability.
+Statement: Executes SQL queries.
+ResultSet: Reads records returned by SELECT queries.
+executeUpdate(): Inserts room and booking records.
+executeQuery(): Retrieves room and booking information.
+
+4. APPLICATION FEATURES
+1. Add Room: Stores room number, type, and tariff.
+2. View Rooms: Displays all registered rooms.
+3. Check Availability: Checks whether a room is free for the requested dates.
+4. Book Room: Stores guest details and booking dates.
+5. Calculate Cost: Calculates total cost using number of nights multiplied by tariff per night.
+6. View Bookings: Displays saved booking records.
+
+5. HOW TO COMPILE AND RUN
+Ensure Oracle Database and its listener are running.
+Compile:
+javac -cp "lib\ojdbc11.jar" -d src src\HotelManagement.java
+Run:
+java -cp "src;lib\ojdbc11.jar" HotelManagement
+
+6. RESULT
+The application connects Java to Oracle Database using JDBC. It allows users to add and view rooms, check availability, book rooms, calculate costs, and view saved bookings.
